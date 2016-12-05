@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package>
+  <name>conjunt</name>
+  <version>0.0.0</version>
+  <description>conjunt_camara</description>
+
+  <maintainer email="miquel_@hotmail.com">Maiti</maintainer>
+
+  <license>BSD</license>
+
+  <author email="miquel_@hotmail.com">Maiti</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+
+</package>

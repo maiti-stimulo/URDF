@@ -1,0 +1,155 @@
+<robot
+  name="conjunt">
+  <link
+    name="ground_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00883572933822129" />
+      <inertia
+        ixx="3.10925633858116E-06"
+        ixy="-1.81210777229075E-39"
+        ixz="0"
+        iyy="6.21262219093684E-06"
+        iyz="-6.40303692210197E-40"
+        izz="3.10925633858116E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/ground_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98, 0.20, 0.12, 0.9" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/ground_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0126468701535971" />
+      <inertia
+        ixx="5.77188810167756E-06"
+        ixy="2.14335918410342E-23"
+        ixz="-4.08958094846217E-21"
+        iyy="1.08689488999108E-05"
+        iyz="-1.17127820564539E-22"
+        izz="5.73971691663278E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="100 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98, 0.154, 0.12, 0.9" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_base"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 2.2004E-18 0.035944" />
+    <parent
+      link="ground_link" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.00266874431864638 -0.00266870016983283 -3.39006400813064E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0949640945929127" />
+      <inertia
+        ixx="3.29898790212861E-05"
+        ixy="-3.35794778185961E-06"
+        ixz="-1.43367115842434E-12"
+        iyy="3.2989814160923E-05"
+        iyz="7.22140376818564E-12"
+        izz="2.97584519126942E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.242, 0.115, 0.12, 0.9" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.035 0"
+      rpy="5.4579E-16 5.2736E-16 -0.026237" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

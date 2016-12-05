@@ -1,0 +1,155 @@
+<robot
+  name="conjunt">
+  <link
+    name="base_ground">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.028373" />
+      <inertia
+        ixx="1.2871E-05"
+        ixy="7.0586E-23"
+        ixz="7.1324E-38"
+        iyy="2.5624E-05"
+        iyz="7.0586E-23"
+        izz="1.2871E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/base_ground.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/base_ground.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_cam">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.016692" />
+      <inertia
+        ixx="9.9831E-06"
+        ixy="3.5561E-22"
+        ixz="9.5291E-21"
+        iyy="1.9511E-05"
+        iyz="-7.7013E-21"
+        izz="9.9831E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/base_cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/base_cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 1 0"
+      rpy="1.5708 -1.8456E-17 -0.30618" />
+    <parent
+      link="base_ground" />
+    <child
+      link="base_cam" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="cam">
+    <inertial>
+      <origin
+        xyz="9.3783E-18 -1.3184E-16 -0.00053571"
+        rpy="0 0 0" />
+      <mass
+        value="0.11087" />
+      <inertia
+        ixx="3.8991E-05"
+        ixy="8.4703E-22"
+        ixz="-8.4703E-22"
+        iyy="3.8991E-05"
+        iyz="-3.3881E-21"
+        izz="4.0508E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cam"
+    type="revolute">
+    <origin
+      xyz="0 0.04 0"
+      rpy="-0.91309 9.4369E-16 0" />
+    <parent
+      link="base_cam" />
+    <child
+      link="cam" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

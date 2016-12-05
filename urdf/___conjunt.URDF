@@ -1,0 +1,153 @@
+ <robot name="conjunt">
+  <link name="camara ground">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.028373" />
+      <inertia
+        ixx="1.2871E-05"
+        ixy="5.8256E-39"
+        ixz="0"
+        iyy="2.5624E-05"
+        iyz="9.0588E-39"
+        izz="1.2871E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camara_ground.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camara_ground.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camara_base">
+    <inertial>
+      <origin
+        xyz="4.6387E-18 0.0087831 -2.3088E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.016692" />
+      <inertia
+        ixx="9.9831E-06"
+        ixy="-7.3083E-23"
+        ixz="-4.2352E-21"
+        iyy="1.9511E-05"
+        iyz="-3.9694E-22"
+        izz="9.9831E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camara_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camara_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jont_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 4.4009E-17 0.802" />
+    <parent
+      link="camara ground" />
+    <child
+      link="camara_base" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="camara">
+    <inertial>
+      <origin
+        xyz="-3.1848E-17 -2.2204E-16 -0.00053619"
+        rpy="0 0 0" />
+      <mass
+        value="0.11087" />
+      <inertia
+        ixx="3.8989E-05"
+        ixy="3.3881E-21"
+        ixz="8.4703E-21"
+        iyy="3.8991E-05"
+        iyz="-8.4703E-21"
+        izz="4.0508E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camara.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://conjunt/meshes/camara.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.04 0"
+      rpy="-0.49673 1.1102E-15 0" />
+    <parent
+      link="camara_base" />
+    <child
+      link="camara" />
+    <axis
+      xyz="0 0 0.04" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
